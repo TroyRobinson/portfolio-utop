@@ -23,8 +23,8 @@ export var storyboard = (
       id='app-scene'
       commentId='app-scene'
       style={{
-        width: 744,
-        height: 1133,
+        width: 1000,
+        height: 1347,
         position: 'absolute',
         left: 1036,
         top: 128,
