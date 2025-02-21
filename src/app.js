@@ -66,7 +66,12 @@ export var App = () => {
         style={{ textAlign: 'center', paddingTop: '4rem' }}
       >
         <h1
-          style={{ fontSize: '3rem', marginBottom: '1rem' }}
+          style={{
+            fontSize: '3rem',
+            marginBottom: '1rem',
+            overflow: 'visible',
+            backgroundColor: '#FFE3E3',
+          }}
         >
           John Doe
         </h1>
