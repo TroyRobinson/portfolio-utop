@@ -1,6 +1,7 @@
 import * as React from 'react'
 import '../public/globals.css'
 import { FlexCol } from './utils'
+import Accordion from './components/Accordion'
 
 const Section = ({ title, children, style }) => (
   <div
@@ -138,6 +139,56 @@ export var App = () => {
           ))}
         </div>
       </Section>
+      {/* Experience Section with Accordion */}
+      <Section title='Experience'>
+        <Accordion
+          items={[
+            {
+              title: 'Senior Developer at Tech Corp',
+              content: 'Led development of multiple high-impact projects. Managed a team of 5 developers. Implemented new CI/CD pipeline reducing deployment time by 50%.'
+            },
+            {
+              title: 'Full Stack Developer at StartUp Inc',
+              content: 'Developed and maintained multiple client-facing applications. Worked with React, Node.js, and MongoDB. Improved application performance by 40%.'
+            },
+            {
+              title: 'Junior Developer at Web Solutions',
+              content: 'Started career building responsive websites. Collaborated with design team to implement pixel-perfect UIs. Learned agile methodologies.'
+            }
+          ]}
+          styles={{
+            container: { maxWidth: '100%' },
+            header: { backgroundColor: '#f8f8f8' },
+            headerActive: { backgroundColor: '#f0f0f0' }
+          }}
+        />
+      </Section>
+
+      {/* Education Section with Accordion */}
+      <Section title='Education'>
+        <Accordion
+          items={[
+            {
+              title: 'Master of Computer Science',
+              content: 'University of Technology\nGraduation: 2022\nFocus: Artificial Intelligence and Machine Learning\nGPA: 3.8/4.0'
+            },
+            {
+              title: 'Bachelor of Software Engineering',
+              content: 'State University\nGraduation: 2020\nHonors Program\nRelevant Coursework: Data Structures, Algorithms, Web Development'
+            },
+            {
+              title: 'Web Development Bootcamp',
+              content: 'Code Academy\nCompleted: 2019\n12-week intensive program focusing on modern web technologies\nBuilt 5 full-stack applications'
+            }
+          ]}
+          styles={{
+            container: { maxWidth: '100%' },
+            header: { backgroundColor: '#f8f8f8' },
+            headerActive: { backgroundColor: '#f0f0f0' }
+          }}
+        />
+      </Section>
+
       {/* Contact Section */}
       <Section
         title='Contact'
