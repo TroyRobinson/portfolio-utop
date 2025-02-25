@@ -60,10 +60,9 @@ export var App = () => {
         minHeight: '100vh',
         background: 'white',
         alignItems: 'center',
-        paddingTop: '4rem', // Add padding for the fixed navigation
+        paddingTop: '4rem',
       }}
     >
-      <Navigation />
       {/* Header/Intro Section */}
       <Section
         style={{ textAlign: 'center', paddingTop: '4rem' }}
@@ -73,7 +72,7 @@ export var App = () => {
             fontSize: '3rem',
             marginBottom: '1rem',
             overflow: 'visible',
-            backgroundColor: '#FFE3E3',
+            backgroundColor: '#EAFFE3',
           }}
         >
           John Doe
@@ -90,6 +89,7 @@ export var App = () => {
           beautiful and functional web applications
         </p>
       </Section>
+      <Navigation />
       {/* Projects Section */}
       <Section title='Projects'>
         <ProjectCard
@@ -147,50 +147,54 @@ export var App = () => {
           items={[
             {
               title: 'Senior Developer at Tech Corp',
-              content: 'Led development of multiple high-impact projects. Managed a team of 5 developers. Implemented new CI/CD pipeline reducing deployment time by 50%.'
+              content:
+                'Led development of multiple high-impact projects. Managed a team of 5 developers. Implemented new CI/CD pipeline reducing deployment time by 50%.',
             },
             {
               title: 'Full Stack Developer at StartUp Inc',
-              content: 'Developed and maintained multiple client-facing applications. Worked with React, Node.js, and MongoDB. Improved application performance by 40%.'
+              content:
+                'Developed and maintained multiple client-facing applications. Worked with React, Node.js, and MongoDB. Improved application performance by 40%.',
             },
             {
               title: 'Junior Developer at Web Solutions',
-              content: 'Started career building responsive websites. Collaborated with design team to implement pixel-perfect UIs. Learned agile methodologies.'
-            }
+              content:
+                'Started career building responsive websites. Collaborated with design team to implement pixel-perfect UIs. Learned agile methodologies.',
+            },
           ]}
           styles={{
             container: { maxWidth: '100%' },
             header: { backgroundColor: '#f8f8f8' },
-            headerActive: { backgroundColor: '#f0f0f0' }
+            headerActive: { backgroundColor: '#f0f0f0' },
           }}
         />
       </Section>
-
       {/* Education Section with Accordion */}
       <Section title='Education'>
         <Accordion
           items={[
             {
               title: 'Master of Computer Science',
-              content: 'University of Technology\nGraduation: 2022\nFocus: Artificial Intelligence and Machine Learning\nGPA: 3.8/4.0'
+              content:
+                'University of Technology\nGraduation: 2022\nFocus: Artificial Intelligence and Machine Learning\nGPA: 3.8/4.0',
             },
             {
               title: 'Bachelor of Software Engineering',
-              content: 'State University\nGraduation: 2020\nHonors Program\nRelevant Coursework: Data Structures, Algorithms, Web Development'
+              content:
+                'State University\nGraduation: 2020\nHonors Program\nRelevant Coursework: Data Structures, Algorithms, Web Development',
             },
             {
               title: 'Web Development Bootcamp',
-              content: 'Code Academy\nCompleted: 2019\n12-week intensive program focusing on modern web technologies\nBuilt 5 full-stack applications'
-            }
+              content:
+                'Code Academy\nCompleted: 2019\n12-week intensive program focusing on modern web technologies\nBuilt 5 full-stack applications',
+            },
           ]}
           styles={{
             container: { maxWidth: '100%' },
             header: { backgroundColor: '#f8f8f8' },
-            headerActive: { backgroundColor: '#f0f0f0' }
+            headerActive: { backgroundColor: '#f0f0f0' },
           }}
         />
       </Section>
-
       {/* Contact Section */}
       <Section
         title='Contact'
@@ -239,4 +243,4 @@ export var App = () => {
   )
 }
 
-export default App;
+export default App
