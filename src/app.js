@@ -1,5 +1,4 @@
 import * as React from 'react'
-import '../public/globals.css'
 import { FlexCol } from './utils'
 import Accordion from './components/Accordion'
 
@@ -236,3 +235,5 @@ export var App = () => {
     </FlexCol>
   )
 }
+
+export default App;
