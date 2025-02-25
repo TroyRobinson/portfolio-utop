@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FlexCol } from './utils'
 import Accordion from './components/Accordion'
+import Navigation from './components/Navigation'
 
 const Section = ({ title, children, style }) => (
   <div
@@ -59,8 +60,10 @@ export var App = () => {
         minHeight: '100vh',
         background: 'white',
         alignItems: 'center',
+        paddingTop: '4rem', // Add padding for the fixed navigation
       }}
     >
+      <Navigation />
       {/* Header/Intro Section */}
       <Section
         style={{ textAlign: 'center', paddingTop: '4rem' }}
