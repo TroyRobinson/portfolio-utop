@@ -90,7 +90,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
         
         {/* Back to work button */}
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-          
+          <a
             href="/work"
             style={{
               display: 'inline-block',
