@@ -2,8 +2,8 @@ import React from 'react'
 import { FlexCol } from '../utils'
 import Navigation from './Navigation'
 
-const CaseStudyLayout = ({ children, frontMatter }) => {
-  const { title, date, image, technologies = [] } = frontMatter || {}
+const CaseStudyLayout = ({ children, frontMatter = {} }) => {
+  const { title, date, image, technologies = [] } = frontMatter;
   
   return (
     <FlexCol
