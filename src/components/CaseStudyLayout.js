@@ -3,10 +3,13 @@ import { FlexCol } from '../utils'
 import Navigation from './Navigation'
 
 const CaseStudyLayout = ({ children, frontMatter = {} }) => {
-  // Use double protection against undefined values
-  const { title = '', date = '', image = '', technologies = [] } = frontMatter;
-  
-  // Rest of your component remains the same, but add a check before accessing technologies
+  // Safely extract props with defaults
+  const { 
+    title = '', 
+    date = '', 
+    image = '', 
+    technologies = [] 
+  } = frontMatter;
   
   return (
     <FlexCol
@@ -29,14 +32,9 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
         }}
       >
+        {/* Header section */}
         <header style={{ marginBottom: '2rem' }}>
-          <h1
-            style={{
-              fontSize: '2.5rem',
-              color: '#333',
-              marginBottom: '1rem',
-            }}
-          >
+          <h1 style={{ fontSize: '2.5rem', color: '#333', marginBottom: '1rem' }}>
             {title}
           </h1>
           
@@ -54,7 +52,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
             <div style={{ marginBottom: '1.5rem', borderRadius: '8px', overflow: 'hidden' }}>
               <img
                 src={image}
-                alt={title}
+                alt={title || 'Case study image'}
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -65,12 +63,11 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
             </div>
           )}
           
-          {/* Add Array.isArray check for extra safety */}
           {Array.isArray(technologies) && technologies.length > 0 && (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
-              {technologies.map((tech) => (
+              {technologies.map((tech, index) => (
                 <span
-                  key={tech}
+                  key={index}
                   style={{
                     padding: '0.25rem 0.75rem',
                     backgroundColor: '#f0f0f0',
@@ -86,10 +83,12 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           )}
         </header>
         
+        {/* Main content */}
         <div style={{ color: '#444', lineHeight: '1.7', fontSize: '1.1rem' }}>
           {children}
         </div>
         
+        {/* Back to work button */}
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
           
             href="/work"
@@ -100,7 +99,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
               color: 'white',
               textDecoration: 'none',
               borderRadius: '4px',
-              fontWeight: 500,
+              fontWeight: '500',
               transition: 'background-color 0.2s',
             }}
           >
