@@ -11,6 +11,13 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
     technologies = [] 
   } = frontMatter;
   
+  // Format date if it exists
+  const formattedDate = date ? new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }) : '';
+  
   return (
     <FlexCol
       style={{
@@ -40,11 +47,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           
           {date && (
             <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '1rem' }}>
-              {new Date(date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
+              {formattedDate}
             </p>
           )}
           
@@ -88,7 +91,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           {children}
         </div>
         
-        {/* Back to work button */}
+        {/* Back to work button - fixed missing opening <a> tag */}
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
           <a
             href="/work"
