@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Scene, Storyboard } from 'utopia-api'
 import { App } from '../src/app'
+import Work from '../src/Work'
 import { Playground } from '../src/playground'
 
 export var storyboard = (
@@ -37,13 +38,13 @@ export var storyboard = (
       id='app-scene'
       commentId='3b72db4e-5695-42a7-8e01-9f3cd6d5'
       style={{
-        width: 268,
+        width: 328,
         position: 'absolute',
         left: 2064,
         top: 128,
         height: 'max-content',
       }}
-      data-label='My App'
+      data-label='Home'
     >
       <App style={{}} />
     </Scene>
@@ -53,13 +54,13 @@ export var storyboard = (
       style={{
         width: 1000,
         position: 'absolute',
-        left: 2452,
+        left: 2472,
         top: 128,
-        height: 'max-content',
+        height: 2188,
       }}
-      data-label='My App 2'
+      data-label='Work'
     >
-      <App style={{}} />
+      <Work style={{}} />
     </Scene>
   </Storyboard>
 )
