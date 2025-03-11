@@ -224,7 +224,7 @@ function Work({ caseStudies = [] }) {
             textAlign: 'center',
           }}
         >
-          My Work
+          All My Work
         </h1>
         <p
           style={{
