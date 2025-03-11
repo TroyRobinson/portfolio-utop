@@ -3,14 +3,17 @@ import { FlexCol } from '../utils'
 import Navigation from './Navigation'
 
 const CaseStudyLayout = ({ children, frontMatter = {} }) => {
-  const { title, date, image, technologies = [] } = frontMatter;
+  // Use double protection against undefined values
+  const { title = '', date = '', image = '', technologies = [] } = frontMatter;
+  
+  // Rest of your component remains the same, but add a check before accessing technologies
   
   return (
     <FlexCol
       style={{
         minHeight: '100vh',
         backgroundColor: '#f9f9f9',
-        paddingTop: '6rem', // Extra padding to account for navigation
+        paddingTop: '6rem',
       }}
     >
       <Navigation />
@@ -26,7 +29,6 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
         }}
       >
-        {/* Header section */}
         <header style={{ marginBottom: '2rem' }}>
           <h1
             style={{
@@ -39,13 +41,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           </h1>
           
           {date && (
-            <p
-              style={{
-                color: '#666',
-                fontSize: '0.9rem',
-                marginBottom: '1rem',
-              }}
-            >
+            <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '1rem' }}>
               {new Date(date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
@@ -55,13 +51,7 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           )}
           
           {image && (
-            <div
-              style={{
-                marginBottom: '1.5rem',
-                borderRadius: '8px',
-                overflow: 'hidden',
-              }}
-            >
+            <div style={{ marginBottom: '1.5rem', borderRadius: '8px', overflow: 'hidden' }}>
               <img
                 src={image}
                 alt={title}
@@ -75,7 +65,8 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
             </div>
           )}
           
-          {technologies.length > 0 && (
+          {/* Add Array.isArray check for extra safety */}
+          {Array.isArray(technologies) && technologies.length > 0 && (
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
               {technologies.map((tech) => (
                 <span
@@ -95,20 +86,12 @@ const CaseStudyLayout = ({ children, frontMatter = {} }) => {
           )}
         </header>
         
-        {/* Main content */}
-        <div
-          style={{
-            color: '#444',
-            lineHeight: '1.7',
-            fontSize: '1.1rem',
-          }}
-        >
+        <div style={{ color: '#444', lineHeight: '1.7', fontSize: '1.1rem' }}>
           {children}
         </div>
         
-        {/* Back to work button */}
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-          <a
+          
             href="/work"
             style={{
               display: 'inline-block',
