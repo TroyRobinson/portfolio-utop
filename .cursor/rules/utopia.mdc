@@ -1,0 +1,7 @@
+---
+description: Ensuring that the React & NextJS setup play nice with the remote Utopia editor
+globs: 
+alwaysApply: true
+---
+
+[package.json](mdc:package.json), [package.local.json](mdc:package.local.json), etc. core react setup files should be kept the same because we are booting the app in two different places. One locally using [local-install.sh](mdc:local-install.sh) and [local-start.sh](mdc:local-start.sh), and also booting the app online in the Utopia editor. The Utopia editor is particular in how the React app is set up so we need to keep the default react configuration files clean. We setup NextJS to run locally with our local-install & local-start files.

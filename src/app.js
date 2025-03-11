@@ -33,9 +33,7 @@ const ProjectCard = ({ title, description, link }) => (
       borderRadius: '8px',
       padding: '1rem',
       marginBottom: '1rem',
-      transition: 'transform 0.2s',
       cursor: 'pointer',
-      ':hover': { transform: 'translateY(-2px)' },
       backgroundColor: '#FAFAFA',
     }}
   >

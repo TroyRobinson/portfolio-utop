@@ -37,9 +37,15 @@ cp package.local.json package.json
 echo "Cleaning up existing installation..."
 rm -rf node_modules package-lock.json
 
-# Create pages directory if it doesn't exist
+# Create necessary directories
+echo "Creating required directories..."
 mkdir -p src/pages
+mkdir -p src/case-studies
+mkdir -p public/images
+mkdir -p src/lib
 
 # Install dependencies
 echo "Installing dependencies..."
 npm install --legacy-peer-deps
+
+echo "Setup complete! You can now run ./local-start.sh to start the development server."
